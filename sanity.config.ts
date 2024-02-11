@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'Words Like Silver',
 
-  projectId: 'vrjpqtdp',
-  dataset: 'production',
+  projectId: 'o2kqii78',
+  dataset: 'development',
 
   plugins: [structureTool(), visionTool()],
 
