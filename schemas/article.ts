@@ -1,3 +1,5 @@
+import {Rule} from "sanity"
+
 export default {
     name: "article",
     type: "document",
@@ -7,6 +9,7 @@ export default {
             name: "title",
             type: "string",
             title: "Title",
+            validation: (Rule: Rule) => Rule.required(),
         },
         {
             name: "slug",
@@ -16,6 +19,7 @@ export default {
                 source: "title",
                 maxLength: 96,
             },
+            validation: (Rule: Rule) => Rule.required(),
         },
         {
             name: "mainImage",
@@ -24,17 +28,13 @@ export default {
             options: {
                 hotspot: true,
             },
+            validation: (Rule: Rule) => Rule.required(),
         },
         {
             name: "categories",
             type: "array",
             title: "Categories",
             of: [{type: "reference", to: {type: "category"}}],
-        },
-        {
-            name: "publishedAt",
-            type: "datetime",
-            title: "Published at",
         },
         {
             name: "body",
