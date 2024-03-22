@@ -22,11 +22,5 @@ export default defineType({
             title: "Articles",
             of: [defineArrayMember({type: "reference", to: {type: "article"}})],
         }),
-        defineField({
-            name: "sort_order",
-            type: "number",
-            title: "Sort order",
-            validation: (Rule) => Rule.required(),
-        }),
     ],
 })

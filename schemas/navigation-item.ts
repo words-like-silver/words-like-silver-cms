@@ -17,8 +17,7 @@ export default defineType({
             title: "URL Slug",
             options: {
                 source: "title",
-                maxLength: 200,
-                slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+                maxLength: 96,
             },
             validation: (Rule) => Rule.required(),
         }),
