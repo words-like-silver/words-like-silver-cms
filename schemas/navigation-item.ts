@@ -12,9 +12,14 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
-            name: "url",
-            type: "string",
-            title: "URL",
+            name: "slug",
+            type: "slug",
+            title: "URL Slug",
+            options: {
+                source: "title",
+                maxLength: 200,
+                slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+            },
             validation: (Rule) => Rule.required(),
         }),
         defineField({
