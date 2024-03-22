@@ -9,6 +9,7 @@ export default defineType({
             name: "title",
             type: "string",
             title: "Title",
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "description",
@@ -20,6 +21,12 @@ export default defineType({
             type: "array",
             title: "Articles",
             of: [defineArrayMember({type: "reference", to: {type: "article"}})],
+        }),
+        defineField({
+            name: "sort_order",
+            type: "number",
+            title: "Sort order",
+            validation: (Rule) => Rule.required(),
         }),
     ],
 })
