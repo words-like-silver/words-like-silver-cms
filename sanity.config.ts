@@ -14,7 +14,6 @@ export default defineConfig({
     title: "Words Like Silver",
     projectId: "o2kqii78",
     dataset: "development",
-
     plugins: [
         structureTool({
             structure: (S) =>
@@ -28,7 +27,6 @@ export default defineConfig({
                             // that we're editing the single instance of the document
                             S.document().schemaType("homepage").documentId("homepage"),
                         ),
-
                         S.documentTypeListItem("article").title("Article"),
                         S.documentTypeListItem("category").title("Category"),
                         S.documentTypeListItem("navigation_item").title("Navigation Item"),
@@ -36,15 +34,12 @@ export default defineConfig({
         }),
         visionTool(),
     ],
-
     schema: {
         types: schemaTypes,
-
         // Filter out singleton types from the global “New document” menu options
         templates: (templates) =>
             templates.filter(({schemaType}) => !singletonTypes.has(schemaType)),
     },
-
     document: {
         // For singleton types, filter out actions that are not explicitly included
         // in the `singletonActions` list defined above
