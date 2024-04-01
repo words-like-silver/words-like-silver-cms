@@ -145,6 +145,23 @@ export default defineType({
                                     </span>
                                 ),
                             },
+                            {
+                                title: "Sailing Club",
+                                value: "sailing-club",
+                                component: (props) => (
+                                    <span className="sailing-club">{props.children}</span>
+                                ),
+                                icon: () => (
+                                    <span
+                                        style={{
+                                            paddingInline: "4px",
+                                        }}
+                                        className="sailing-club"
+                                    >
+                                        SC
+                                    </span>
+                                ),
+                            },
                             {title: "Code", value: "code"},
                         ],
                     },
