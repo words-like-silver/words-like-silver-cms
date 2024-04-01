@@ -22,6 +22,13 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
+            name: "featured_article_secondary",
+            type: "reference",
+            title: "Featured Article - Secondary",
+            to: {type: "article"},
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
             name: "top_bar_articles",
             type: "array",
             title: "Top Bar Articles",
