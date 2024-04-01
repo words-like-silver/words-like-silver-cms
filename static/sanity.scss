@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "frys-baskerville";
+    src: url("./fonts/frys_baskerville_regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "sailing-club";
+    font-style: normal;
+    src: url("./fonts/SailingClub-Regular.woff") format("opentype");
+}
+
+@font-face {
+    font-family: "sailing-club";
+    font-style: italic;
+    src: url("./fonts/SailingClub-Italic.woff") format("opentype");
+}
+
+* {
+    font-family: "frys-baskerville", serif;
+    &.sailing-club {
+        span {
+            font-family: "sailing-club", serif;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &.eMYZmo {
+        span {
+            font-family: "sailing-club", serif !important;
+            font-size: larger;
+        }
+    }
+}
+
+input.gGwMOM {
+    font-family: "frys-baskerville", serif;
+}
+
+.ivLJRY {
+    span {
+        font-family: "sailing-club", serif;
+        font-size: x-large;
+        font-weight: bold;
+        &.iZauiy {
+            font-family: "frys-baskerville", serif;
+            font-size: small;
+        }
+    }
+}
+html {
+    font-size: 18px;
+}

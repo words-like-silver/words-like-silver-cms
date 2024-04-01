@@ -69,6 +69,23 @@ export default defineType({
                                     </span>
                                 ),
                             },
+                            {
+                                title: "Sailing Club",
+                                value: "sailing-club",
+                                component: (props) => (
+                                    <span className="sailing-club">{props.children}</span>
+                                ),
+                                icon: () => (
+                                    <span
+                                        style={{
+                                            paddingInline: "4px",
+                                        }}
+                                        className="sailing-club"
+                                    >
+                                        SC
+                                    </span>
+                                ),
+                            },
                             {title: "Code", value: "code"},
                         ],
                     },
@@ -78,6 +95,74 @@ export default defineType({
                     type: "object",
                     name: "quote",
                     fields: [{type: "string", name: "text"}],
+                }),
+                defineArrayMember({
+                    type: "object",
+                    name: "horizontal_rule",
+                    fields: [
+                        {
+                            name: "style",
+                            type: "string",
+                            title: "Break style",
+                            options: {
+                                list: [{title: "Horizontal Rule", value: "horizontal_rule"}],
+                            },
+                        },
+                    ],
+                }),
+            ],
+        }),
+        defineField({
+            name: "sidebar",
+            type: "array",
+            title: "Sidebar",
+            of: [
+                defineArrayMember({
+                    type: "block",
+                    marks: {
+                        decorators: [
+                            {title: "Strong", value: "strong"},
+                            {title: "Emphasis", value: "em"},
+                            {title: "Underline", value: "underline"},
+                            {title: "Strike", value: "strike-through"},
+                            {
+                                title: "Highlight",
+                                value: "highlight",
+                                component: (props) => (
+                                    <span style={{backgroundColor: "#ff0", color: "black"}}>
+                                        {props.children}
+                                    </span>
+                                ),
+                                icon: () => (
+                                    <span
+                                        style={{
+                                            backgroundColor: "#ff0",
+                                            color: "black",
+                                            paddingInline: "4px",
+                                        }}
+                                    >
+                                        H
+                                    </span>
+                                ),
+                            },
+                            {title: "Code", value: "code"},
+                        ],
+                    },
+                }),
+                defineArrayMember({type: "image"}),
+                defineArrayMember({
+                    type: "object",
+                    name: "horizontal_rule",
+                    fields: [
+                        {
+                            name: "style",
+                            type: "string",
+                            title: "Break style",
+                            options: {
+                                list: [{title: "Horizontal Rule", value: "horizontal_rule"}],
+                            },
+                        },
+                    ],
                 }),
             ],
         }),

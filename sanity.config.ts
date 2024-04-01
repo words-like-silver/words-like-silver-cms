@@ -2,12 +2,39 @@ import {visionTool} from "@sanity/vision"
 import {defineConfig} from "sanity"
 import {structureTool} from "sanity/structure"
 import {schemaTypes} from "./schemas"
+import "./static/sanity.scss"
 
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(["publish", "discardChanges", "restore"])
 
 // Define the singleton document types
 const singletonTypes = new Set(["homepage"])
+
+import {buildLegacyTheme} from "sanity"
+
+const props = {
+    "--my-white": "#FAF8F1",
+    "--my-black": "black",
+}
+
+export const myTheme = buildLegacyTheme({
+    /* Base theme colors */
+    "--black": props["--my-black"],
+    "--white": props["--my-white"],
+
+    "--gray": "#666",
+    "--gray-base": "#666",
+
+    "--component-bg": props["--my-white"],
+    "--component-text-color": props["--my-black"],
+
+    // Default button
+    "--default-button-color": "#666",
+
+    /* Navbar */
+    "--main-navigation-color": props["--my-black"],
+    "--main-navigation-color--inverted": props["--my-white"],
+})
 
 export default defineConfig({
     name: "default",
@@ -48,4 +75,5 @@ export default defineConfig({
                 ? input.filter(({action}) => action && singletonActions.has(action))
                 : input,
     },
+    theme: myTheme,
 })
