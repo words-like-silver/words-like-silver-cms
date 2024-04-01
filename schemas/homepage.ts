@@ -22,6 +22,13 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
+            name: "featured_article_row",
+            type: "array",
+            title: "Featured Article Row",
+            of: [defineArrayMember({type: "reference", to: {type: "article"}})],
+            validation: (Rule) => Rule.required().max(3),
+        }),
+        defineField({
             name: "featured_article_secondary",
             type: "reference",
             title: "Featured Article - Secondary",
