@@ -7,9 +7,42 @@ export default defineType({
     fields: [
         defineField({
             name: "title",
-            type: "string",
             title: "Title",
-            validation: (Rule) => Rule.required(),
+            type: "array",
+            of: [
+                {
+                    type: "block",
+                    marks: {
+                        decorators: [
+                            {title: "Strong", value: "strong"},
+                            {title: "Emphasis", value: "em"},
+                            {title: "Underline", value: "underline"},
+                            {title: "Strike", value: "strike-through"},
+                            {
+                                title: "Highlight",
+                                value: "highlight",
+                                component: (props) => (
+                                    <span style={{backgroundColor: "#ff0", color: "black"}}>
+                                        {props.children}
+                                    </span>
+                                ),
+                                icon: () => (
+                                    <span
+                                        style={{
+                                            backgroundColor: "#ff0",
+                                            color: "black",
+                                            paddingInline: "4px",
+                                        }}
+                                    >
+                                        H
+                                    </span>
+                                ),
+                            },
+                        ],
+                    },
+                },
+            ],
+            validation: (Rule) => Rule.required().length(1),
         }),
         defineField({
             name: "subhead",
@@ -23,7 +56,13 @@ export default defineType({
             title: "Slug",
             options: {
                 source: "title",
-                maxLength: 96,
+                slugify: (input: any) => {
+                    const titleText = input[0].children.map((child: any) => child.text).join("")
+                    return titleText
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")
+                        .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "")
+                },
             },
             validation: (Rule) => Rule.required(),
         }),
@@ -35,6 +74,17 @@ export default defineType({
                 hotspot: true,
             },
             validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: "headerType",
+            type: "string",
+            title: "Header type",
+            options: {
+                list: [
+                    {title: "Horizontal Image", value: "horizontalImage"},
+                    {title: "Book", value: "book"},
+                ],
+            },
         }),
         defineField({
             name: "body",

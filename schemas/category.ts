@@ -27,6 +27,13 @@ export default defineType({
             title: "Description",
         }),
         defineField({
+            name: "featuredArticles",
+            type: "array",
+            title: "Featured Articles",
+            of: [defineArrayMember({type: "reference", to: {type: "article"}})],
+            validation: (Rule) => Rule.required().length(3),
+        }),
+        defineField({
             name: "articles",
             type: "array",
             title: "Articles",
