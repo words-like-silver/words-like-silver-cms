@@ -1,4 +1,4 @@
-import {defineArrayMember, defineField, defineType} from "sanity"
+import { defineArrayMember, defineField, defineType } from "sanity"
 
 export default defineType({
     name: "article",
@@ -22,14 +22,19 @@ export default defineType({
                                 title: "Highlight",
                                 value: "highlight",
                                 component: (props) => (
-                                    <span style={{backgroundColor: "#ff0", color: "black"}}>
+                                    <span
+                                        style={{
+                                            backgroundColor: "rgba(214, 144, 16, 0.3)",
+                                            color: "black",
+                                        }}
+                                    >
                                         {props.children}
                                     </span>
                                 ),
                                 icon: () => (
                                     <span
                                         style={{
-                                            backgroundColor: "#ff0",
+                                            backgroundColor: "rgba(214, 144, 16, 0.3)",
                                             color: "black",
                                             paddingInline: "4px",
                                         }}
@@ -103,14 +108,19 @@ export default defineType({
                                 title: "Highlight",
                                 value: "highlight",
                                 component: (props) => (
-                                    <span style={{backgroundColor: "#ff0", color: "black"}}>
+                                    <span
+                                        style={{
+                                            backgroundColor: "rgba(214, 144, 16, 0.3)",
+                                            color: "black",
+                                        }}
+                                    >
                                         {props.children}
                                     </span>
                                 ),
                                 icon: () => (
                                     <span
                                         style={{
-                                            backgroundColor: "#ff0",
+                                            backgroundColor: "rgba(214, 144, 16, 0.3)",
                                             color: "black",
                                             paddingInline: "4px",
                                         }}
@@ -179,14 +189,19 @@ export default defineType({
                                 title: "Highlight",
                                 value: "highlight",
                                 component: (props) => (
-                                    <span style={{backgroundColor: "#ff0", color: "black"}}>
+                                    <span
+                                        style={{
+                                            backgroundColor: "rgba(214, 144, 16, 0.3)",
+                                            color: "black",
+                                        }}
+                                    >
                                         {props.children}
                                     </span>
                                 ),
                                 icon: () => (
                                     <span
                                         style={{
-                                            backgroundColor: "#ff0",
+                                            backgroundColor: "rgba(214, 144, 16, 0.3)",
                                             color: "black",
                                             paddingInline: "4px",
                                         }}
