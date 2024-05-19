@@ -4,6 +4,7 @@ export default defineType({
     name: "article",
     type: "document",
     title: "Article",
+
     fields: [
         defineField({
             name: "title",
@@ -90,6 +91,13 @@ export default defineType({
                     {title: "Book", value: "book"},
                 ],
             },
+            initialValue: "horizontalImage",
+        }),
+        defineField({
+            name: "tags",
+            type: "array",
+            title: "Tags",
+            of: [defineArrayMember({type: "reference", name: "Tags", to: {type: "tag"}})],
         }),
         defineField({
             name: "body",

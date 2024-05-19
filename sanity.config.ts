@@ -1,7 +1,7 @@
-import {visionTool} from "@sanity/vision"
-import {defineConfig} from "sanity"
-import {structureTool} from "sanity/structure"
-import {schemaTypes} from "./schemas"
+import { visionTool } from "@sanity/vision"
+import { defineConfig } from "sanity"
+import { structureTool } from "sanity/structure"
+import { schemaTypes } from "./schemas"
 import "./static/sanity.scss"
 
 // Define the actions that should be available for singleton documents
@@ -10,7 +10,7 @@ const singletonActions = new Set(["publish", "discardChanges", "restore"])
 // Define the singleton document types
 const singletonTypes = new Set(["homepage"])
 
-import {buildLegacyTheme} from "sanity"
+import { buildLegacyTheme } from "sanity"
 
 const props = {
     "--my-white": "#FAF8F1",
@@ -57,6 +57,7 @@ export default defineConfig({
                         S.documentTypeListItem("article").title("Article"),
                         S.documentTypeListItem("category").title("Category"),
                         S.documentTypeListItem("navigation_item").title("Navigation Item"),
+                        S.documentTypeListItem("tag").title("Tag"),
                     ]),
         }),
         visionTool(),
