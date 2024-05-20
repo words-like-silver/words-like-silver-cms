@@ -1,4 +1,4 @@
-import {defineArrayMember, defineField, defineType} from "sanity"
+import { defineArrayMember, defineField, defineType } from "sanity"
 
 export default defineType({
     name: "category",
@@ -31,7 +31,7 @@ export default defineType({
             type: "array",
             title: "Featured Articles",
             of: [defineArrayMember({type: "reference", to: {type: "article"}})],
-            validation: (Rule) => Rule.required().length(3),
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "articles",
