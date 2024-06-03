@@ -73,6 +73,13 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
+            name: "starred",
+            type: "boolean",
+            title: "Starred",
+            description: "Toggle the star icon that appears on book articles",
+            initialValue: false,
+        }),
+        defineField({
             name: "mainImage",
             type: "image",
             title: "Main image",
