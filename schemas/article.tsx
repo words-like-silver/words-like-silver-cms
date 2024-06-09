@@ -169,7 +169,19 @@ export default defineType({
                 defineArrayMember({
                     type: "object",
                     name: "quote",
-                    fields: [{type: "string", name: "text"}],
+                    fields: [
+                        {
+                            type: "string",
+                            name: "type",
+                            options: {
+                                list: [
+                                    {title: "Italic", value: "italic"},
+                                    {title: "Paper Background", value: "background"},
+                                ],
+                            },
+                        },
+                        {type: "string", name: "text"},
+                    ],
                 }),
                 defineArrayMember({
                     type: "object",
