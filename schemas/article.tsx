@@ -107,6 +107,13 @@ export default defineType({
             of: [defineArrayMember({type: "reference", name: "Tags", to: {type: "tag"}})],
         }),
         defineField({
+            name: "categories",
+            type: "array",
+            title: "Categories",
+            of: [defineArrayMember({type: "reference", to: {type: "category"}})],
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
             name: "body",
             type: "array",
             title: "Body",

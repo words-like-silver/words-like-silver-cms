@@ -33,11 +33,5 @@ export default defineType({
             of: [defineArrayMember({type: "reference", to: {type: "article"}})],
             validation: (Rule) => Rule.required(),
         }),
-        defineField({
-            name: "articles",
-            type: "array",
-            title: "Articles",
-            of: [defineArrayMember({type: "reference", to: {type: "article"}})],
-        }),
     ],
 })
