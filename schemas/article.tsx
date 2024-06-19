@@ -169,6 +169,31 @@ export default defineType({
                                 ),
                             },
                             {title: "Code", value: "code"},
+                            {
+                                title: "Spoiler",
+                                value: "spoiler",
+                                component: (props) => (
+                                    <span
+                                        style={{
+                                            backgroundColor: "black",
+                                            color: "white",
+                                        }}
+                                    >
+                                        {props.children}
+                                    </span>
+                                ),
+                                icon: () => (
+                                    <span
+                                        style={{
+                                            backgroundColor: "black",
+                                            color: "white",
+                                            paddingInline: "4px",
+                                        }}
+                                    >
+                                        S
+                                    </span>
+                                ),
+                            },
                         ],
                     },
                 }),
