@@ -96,6 +96,7 @@ export default defineType({
                 list: [
                     {title: "Horizontal Image", value: "horizontalImage"},
                     {title: "Book", value: "book"},
+                    {title: "Square Image", value: "squareImage"},
                 ],
             },
             initialValue: "horizontalImage",
