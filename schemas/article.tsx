@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity"
+import customImage from "./objects/customImage"
 
 export default defineType({
     name: "article",
@@ -83,6 +84,17 @@ export default defineType({
             name: "mainImage",
             type: "image",
             title: "Main image",
+            fields: [
+                {
+                    title: "Alternative Text",
+                    name: "alt",
+                    type: "string",
+                    validation: (Rule) => Rule.required(),
+                    options: {
+                        isHighlighted: true,
+                    },
+                },
+            ],
             options: {
                 hotspot: true,
             },
@@ -169,7 +181,6 @@ export default defineType({
                                     </span>
                                 ),
                             },
-                            {title: "Code", value: "code"},
                             {
                                 title: "Spoiler",
                                 value: "spoiler",
@@ -198,7 +209,7 @@ export default defineType({
                         ],
                     },
                 }),
-                defineArrayMember({type: "image"}),
+                customImage,
                 defineArrayMember({
                     type: "object",
                     name: "quote",
@@ -291,7 +302,7 @@ export default defineType({
                         ],
                     },
                 }),
-                defineArrayMember({type: "image"}),
+                defineArrayMember(customImage),
                 defineArrayMember({
                     type: "object",
                     name: "horizontal_rule",
