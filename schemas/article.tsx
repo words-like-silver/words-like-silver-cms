@@ -319,5 +319,12 @@ export default defineType({
                 }),
             ],
         }),
+        defineField({
+            name: "relatedArticles",
+            type: "array",
+            title: "Related Articles",
+            of: [defineArrayMember({type: "reference", to: {type: "article"}})],
+            validation: (Rule) => Rule.max(4),
+        }),
     ],
 })
